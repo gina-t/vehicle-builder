@@ -10,7 +10,7 @@ import AbleToTow from '../interfaces/AbleToTow.js';
 // TODO: The properties should include vin, color, make, model, year, weight, top speed, wheels, and towing capacity
 // TODO: The types should be as follows: vin (string), color (string), make (string), model (string), year (number), weight (number), topSpeed (number), wheels (Wheel[]), towingCapacity (number)
 
-class Truck extends Vehicle{
+class Truck extends Vehicle implements AbleToTow {
   vin: string;
   color: string;
   make: string;
@@ -59,9 +59,11 @@ class Truck extends Vehicle{
   // TODO: If it is not, log that the vehicle is too heavy to be towed
 
   tow(vehicle: Truck | Motorbike | Car): void {
-    console.log(this.model, this.make);
-
-    if (this.weight <= this.towingCapacity) {
+    const vehicleMake = vehicle.make || 'Unknown make';
+    const vehicleModel = vehicle.model || 'Unknown model';
+    const vehicleWeight = vehicle.weight || 0;
+    console.log(`Towing vehicle: ${vehicleMake} ${vehicleModel}`);
+    if (vehicleWeight <= this.towingCapacity) {
       console.log(`Vehicle is being towed`);
     } else {
       console.log(`Vehicle is too heavy to be towed`);

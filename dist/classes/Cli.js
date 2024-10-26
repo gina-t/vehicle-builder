@@ -4,6 +4,7 @@ import Truck from "./Truck.js";
 import Car from "./Car.js";
 import Motorbike from "./Motorbike.js";
 import Wheel from "./Wheel.js";
+
 // define the Cli class
 // TODO: update the vehicles property to accept Truck and Motorbike objects as well
 // TODO: You will need to use the Union operator to define additional types for the array
@@ -13,7 +14,6 @@ class Cli {
     constructor(vehicles) {
         this.exit = false;
         this.vehicles = vehicles;
-        console.log(this.vehicles[1]);
     }
     // static method to generate a vin
     static generateVin() {
@@ -374,24 +374,22 @@ class Cli {
                 }
                 // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
             }
-            else if (answers.action === 'Tow' && this.vehicles[1]) {
-                const selectedVehicle = this.vehicles[1]; // Assuming this is the selected vehicle
-                // Check if the selected vehicle is a truck
+            else if (answers.action === 'Tow') {
+                const selectedVehicle = this.vehicles.find((vehicle) => vehicle.vin === this.selectedVehicleVin);
                 if (selectedVehicle instanceof Truck) {
-                    // Call the findVehicleToTow method and pass the selected truck
+                    console.log('The selected vehicle is a truck.');
                     this.findVehicleToTow(selectedVehicle);
-                    return; // Return to avoid calling performActions again
+                    return;
                 }
                 else {
                     console.log('The selected vehicle is not a truck.');
                 }
                 // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
             }
-            else if (answers.action === 'Wheelie' && this.vehicles[1]) {
-                const selectedVehicle = this.vehicles[1]; // Assuming this is the selected vehicle
-                // Check if the selected vehicle is a motorbike
+            else if (answers.action === 'Wheelie') {
+                const selectedVehicle = this.vehicles.find((vehicle) => vehicle.vin === this.selectedVehicleVin);
                 if (selectedVehicle instanceof Motorbike) {
-                    // Call the wheelie method on the selected motorbike
+                    console.log('The selected vehicle is a motorbike.');
                     selectedVehicle.wheelie();
                 }
                 else {
