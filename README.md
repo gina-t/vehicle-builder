@@ -50,5 +50,5 @@ The app declares 6 classes and 2 interfaces:
 ## Questions
 
 For enquiries, please contact me at:
-   - [Email](#email)
-   - [GitHub](#github)
+   - ginadrcoder@gmail.com
+   - [(https://github.com/gina-t)]
