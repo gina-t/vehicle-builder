@@ -27,7 +27,7 @@ The app declares 6 classes and 2 interfaces:
  - generic Vehicle class
  - Car class, extends Vehicle class
  - Truck class, extends Vehicle class 
- - Morobike class, extends Vehicle class
+ - Motorbike class, extends Vehicle class
  - Wheel class, defines properties of wheel
  - Command line class
  - Driveable interface, inplemented by Vehicle class
@@ -36,6 +36,7 @@ The app declares 6 classes and 2 interfaces:
  Run with npm start
 
 ## License
+
     This project is licensed under the MIT License.
     
 ## Contributing
