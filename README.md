@@ -36,13 +36,6 @@ The app declares 6 classes and 2 interfaces:
  Run with npm start
 
 ## License
-
-MIT License
-![License](https://img.shields.io/badge/license-MIT License-blue.svg)
-
-* [License](#license)
-
-## License
     This project is licensed under the MIT License.
     
 ## Contributing
